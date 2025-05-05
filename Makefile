@@ -20,8 +20,8 @@ SRCS = $(shell find $(SRC_DIR) -name '*.c')
 
 # 오브젝트 파일 및 디펜던시 설정
 OBJS = $(SRCS:$(SRC_DIR)/%.c=%.o)
-OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJS))
-DEPS = $(OBJECTS:.o=.d)
+	OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJS))
+	DEPS = $(OBJECTS:.o=.d)
 
 # 기본 타겟
 all: dirs $(TARGET)
