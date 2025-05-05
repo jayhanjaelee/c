@@ -24,7 +24,10 @@ OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJS))
 DEPS = $(OBJECTS:.o=.d)
 
 # 기본 타겟
-all: $(TARGET)
+all: dirs $(TARGET)
+
+dirs:
+	@mkdir -p $(BIN_DIR) $(OBJ_DIR)
 
 # 오브젝트 파일 생성
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
