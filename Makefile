@@ -1,7 +1,7 @@
 CC = gcc
 
 # C++ 컴파일러 옵션
-CXXFLAGS = -Wall -O2 -Wunused-private-field
+CXXFLAGS = -g -Wall -O0 -Wunused-private-field
 
 # 링커 옵션
 LDFLAGS =
