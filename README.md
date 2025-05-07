@@ -1,6 +1,6 @@
 # C
 
-This repository is about playground for C Program.
+This repository is a playground for C Program.
 
 ## usage
 
