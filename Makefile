@@ -7,11 +7,11 @@ CXXFLAGS = -g -Wall -O0 -Wunused-private-field
 LDFLAGS =
 
 # 헤더파일 경로
-INCLUDE = -Iinclude/ -Isrc/
+INCLUDE = -Iinclude
 
 # 디렉토리 설정
 SRC_DIR = ./src
-OBJ_DIR = ./obj
+BUILD_DIR = ./build
 BIN_DIR = ./bin
 TARGET = main
 
@@ -20,17 +20,20 @@ SRCS = $(shell find $(SRC_DIR) -name '*.c')
 
 # 오브젝트 파일 및 디펜던시 설정
 OBJS = $(SRCS:$(SRC_DIR)/%.c=%.o)
-	OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJS))
-	DEPS = $(OBJECTS:.o=.d)
+OBJECTS = $(addprefix $(BUILD_DIR)/, $(OBJS))
+DEPS = $(OBJECTS:.o=.d)
 
 # 기본 타겟
-all: dirs $(TARGET)
+all: dirs $(TARGET) run
 
 dirs:
-	@mkdir -p $(BIN_DIR) $(OBJ_DIR)
+	@mkdir -p $(BIN_DIR) $(BUILD_DIR)
+
+run:
+	@./$(BIN_DIR)/$(TARGET)
 
 # 오브젝트 파일 생성
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CXXFLAGS) $(INCLUDE) -c $< -o $@ -MD $(LDFLAGS)
 

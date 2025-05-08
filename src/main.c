@@ -1,6 +1,11 @@
-#include "lib/utils.h"
 #include <stdio.h>
 
+#include "math.h"
+#include "utils.h"
+
 int main(void) {
-  print_byteorder();
+  int result = b_is_odd(2);
+
+  printf("result: %d\n", result);
+  //print_byteorder();
 }
