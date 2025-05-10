@@ -4,4 +4,6 @@
 int b_is_even(int n);
 int b_is_odd(int n);
 
+void swap(int *lhs, int *rhs);
+
 #endif

@@ -16,7 +16,7 @@ BIN_DIR = ./bin
 TARGET = main
 
 # 모든 .c 파일을 재귀적으로 검색
-SRCS = $(shell find $(SRC_DIR) -name '*.c')
+SRCS = $(shell find $(SRC_DIR) -name '*.c' -not -path './src/ex/*')
 
 # 오브젝트 파일 및 디펜던시 설정
 OBJS = $(SRCS:$(SRC_DIR)/%.c=%.o)

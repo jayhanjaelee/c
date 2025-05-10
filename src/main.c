@@ -4,8 +4,11 @@
 #include "utils.h"
 
 int main(void) {
-  int result = b_is_odd(2);
+  int a = 1;
+  int b = 2;
 
-  printf("result: %d\n", result);
+  printf("Hello, World!\n");
   //print_byteorder();
+
+  return 0;
 }
