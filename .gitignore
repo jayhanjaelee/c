@@ -1,3 +1,13 @@
+# ignore all
+*
+
+# unignore all
+!/**/
+
+# not to ignore files having a extension.
+!*.*
+
 bin/
 build/
-src/ex/main*
+/**/*.dSYM
+/**/*.o

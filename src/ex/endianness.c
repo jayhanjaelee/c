@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#include "math.h"
-#include "utils.h"
+#include "../utils.h"
 
 int main(void) {
   /*
@@ -20,6 +19,4 @@ int main(void) {
   printf("ch: %s\n", ch);
 
   print_byteorder();
-
-  return 0;
 }
