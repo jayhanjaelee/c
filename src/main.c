@@ -11,8 +11,9 @@ int main(void) {
   int n = 0x12345678;
 
   /*
-  Exception: 
+  Exception:
   61 62 63 00 ( Little & Big Endian is same. )
+  문자열일땐  byte order 에 상관없이 문자열 순서 그대로 저장된다.
   */
   char *ch = "abc";
 
