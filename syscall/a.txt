@@ -1,3 +1,0 @@
-world
-s first position in file.
-hello
