@@ -1,20 +1,24 @@
 cmake_minimum_required(VERSION 3.8)
-project(my_project)
+project(TCP_IP_Socket)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Change path from /src if needed, or add more directories
-file(GLOB_RECURSE sources
-  "${CMAKE_SOURCE_DIR}/src/*.c"
-  "${CMAKE_SOURCE_DIR}/src/*.cpp"
+# 공용 소스 파일
+set(COMMON_SOURCES
+  "${CMAKE_SOURCE_DIR}/src/DieWithMessage.c"
+  "${CMAKE_SOURCE_DIR}/src/TCPServerUtility.c"
 )
-# Add precompiler definitions like that:
-add_definitions(-DSOME_DEFINITION)
 
-add_executable(app ${sources})
+# TCP Echo Server 빌드
+add_executable(server
+  "${CMAKE_SOURCE_DIR}/src/TCPEchoServer4.c"
+  ${COMMON_SOURCES}
+)
+target_include_directories(server PUBLIC "${CMAKE_SOURCE_DIR}/include")
 
-# Add more include directories if needed
-target_include_directories(app PUBLIC "${CMAKE_SOURCE_DIR}/include")
-
-# If you have precompiled headers you can add them like this
-# target_precompiled_headers(my_app PRIVATE "${CMAKE_SOURCE_DIR}/src/pch.h")
+# TCP Echo Client 빌드
+add_executable(client
+  "${CMAKE_SOURCE_DIR}/src/TCPEchoClient4.c"
+  ${COMMON_SOURCES}
+)
+target_include_directories(client PUBLIC "${CMAKE_SOURCE_DIR}/include")

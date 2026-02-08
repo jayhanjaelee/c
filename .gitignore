@@ -4,10 +4,12 @@
 # unignore all
 !/**/
 
-# not to ignore files having a extension.
+# 파일 확장자가 있는건 gitignore 처리 하지않음.
 !*.*
 
+# 실제 ignore 되는 목록들.
 bin/
 build/
 /**/*.dSYM
 /**/*.o
+./**/.cache/
