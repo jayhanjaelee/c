@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
         char clntName[INET_ADDRSTRLEN];
 
         // 클라이언트의 네트워크 바이트 순서 주소를 호스트 바이트 순서의 문자열로 변환
-        // inet_ntop(): 네트워크 주소를 문자열로 변환 (arpa/inet.h에서 정의)
+        // inet_ntop(): 네트워크 주소를 문자열로 변환 (arpa/inet.h에서 정의) -> numeric to printable
         if (inet_ntop(AF_INET, &clntAddr.sin_addr.s_addr, clntName, sizeof(clntName)) != NULL)
             // ntohs(): 네트워크 바이트 순서 -> 호스트 바이트 순서 포트번호 변환
             printf("Handling client %s/%d\n", clntName, ntohs(clntAddr.sin_port));

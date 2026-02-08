@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     servAddr.sin_family = AF_INET;            /* IPv4 프로토콜 사용 지정 */
 
     /* 문자열 형식의 IP 주소를 바이너리 형식으로 변환 - arpa/inet.h의 inet_pton() */
-    /* 반환값: 1(성공), 0(유효하지 않은 주소), -1(시스템 에러) */
+    /* 반환값: 1(성공), 0(유효하지 않은 주소), -1(시스템 에러) pton -> printable to numeric */
     int rtnVal = inet_pton(AF_INET, servIP, &servAddr.sin_addr.s_addr);
     if (rtnVal == 0)
         DieWithUserMessage("inet_pton() failed", "invalid address string");  /* 사용자 입력 오류 */
