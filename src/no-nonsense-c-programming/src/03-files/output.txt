@@ -1,0 +1,6 @@
+This it my input.txt
+
+adsfsf
+asdklajdsfk
+asdkfjalsdkf
+>>>>>>>>>>>>>>>>>>>>
