@@ -1,0 +1,16 @@
+[
+  {
+    "file": "src/graphics.c",
+    "arguments": [
+      "clang",
+      "-Wall",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/objs/graphics.o",
+      "src/graphics.c"
+    ],
+    "directory": "/Users/jay/Desktop/c/src/no-nonsense-c-programming/src/08-graphics",
+    "output": "build/objs/graphics.o"
+  }
+]
